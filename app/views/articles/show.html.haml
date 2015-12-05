@@ -1,3 +1,5 @@
+= link_to "Назад", root_path, type: "button", class: "btn btn-default"
+
 %h1= @article.title
 %p= @article.content
 
@@ -16,6 +18,8 @@
 %h1= @article.titleUa
 %p= @article.contentUa
 
-= link_to "Назад", root_path
-= link_to "Edit", edit_article_path(@article)
-= link_to "Delete", article_path(@article), method: :delete,  data: { confirm: "Вы уверены?"}
+.btn-group
+	
+	= link_to "Редактировать", edit_article_path(@article), class: "btn btn-default"
+	= if current_user.admin?
+		= link_to "Удалить", article_path(@article), method: :delete,  data: { confirm: "Вы уверены?"}, class: "btn btn-default"

@@ -17,7 +17,7 @@ gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'simple_form', '~> 3.2'
-
+gem 'protected_attributes'
 
 
 # Use jquery as the JavaScript library

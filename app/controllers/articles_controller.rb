@@ -2,6 +2,8 @@ class ArticlesController < ApplicationController
 
 	before_action :find_article, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user! 
+	#before_action :admin_user,     only: :destroy
+	#before_filter :check_if_admin, only: [:destroy]
 	#, exept: [:index, :show]
 
 	def index
@@ -49,6 +51,10 @@ class ArticlesController < ApplicationController
 	end
 
 	private
+
+	def admin_user
+      redirect_to(root_url) unless current_user.admin?
+    end
 
 	def find_article
 		@article = Article.find(params[:id])
