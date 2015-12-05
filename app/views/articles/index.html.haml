@@ -7,5 +7,5 @@
 		= article.created_at.strftime('%d %b , %Y')
 	%p= truncate(article.content, length: 200)
 
-
+#- if user_signed_in?
 = link_to "Создать запись", new_article_path
