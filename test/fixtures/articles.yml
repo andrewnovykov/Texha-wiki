@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  title-en: MyString
+  title-fr: MyString
+  string: MyString
+  title-cn: MyString
+  title-es: MyString
+  title-ua: MyString
+  content: MyText
+  content-en: MyText
+  content-fr: MyText
+  content-cn: MyText
+  content-es: MyText
+  content-ua: MyText
+
+two:
+  title: MyString
+  title-en: MyString
+  title-fr: MyString
+  string: MyString
+  title-cn: MyString
+  title-es: MyString
+  title-ua: MyString
+  content: MyText
+  content-en: MyText
+  content-fr: MyText
+  content-cn: MyText
+  content-es: MyText
+  content-ua: MyText
