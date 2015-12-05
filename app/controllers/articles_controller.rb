@@ -5,7 +5,12 @@ class ArticlesController < ApplicationController
 	#, exept: [:index, :show]
 
 	def index
-		@articles = Article.all.order("created_at DESC")
+		if params[:category].blank?
+			@articles = Article.all.order("created_at DESC")
+		else
+			@category_id = Category.find_by(name: params[:category] ).id 
+			@articles = Article.where(category_id: @category_id ).order("created_at DESC")
+		end
 	end
 
 	def show
@@ -33,7 +38,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def article_params
-		params.require(:article).permit(:title, :titleEn, :titleFr, :titleCn, :titleEs, :titleUa,  :content, :contentEn, :contentFr, :contentCn, :contentEs,  :contentUa,)
+		params.require(:article).permit(:category_id, :title, :titleEn, :titleFr, :titleCn, :titleEs, :titleUa,  :content, :contentEn, :contentFr, :contentCn, :contentEs,  :contentUa,)
 		
 	end
 end
