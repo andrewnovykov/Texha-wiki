@@ -1,0 +1,15 @@
+= simple_form_for @item do |f|
+	= f.collection_select :article_id, Article.all, :id, :title, {promt: "Выберите категорию"}
+	= f.input :title, label: 'Название записи' , placeholder: 'название на русском'
+	= f.input :titleEn, label: 'Название записи EN' , placeholder: 'название на английском'
+	= f.input :titleFr
+	= f.input :titleCn
+	= f.input :titleEs
+	= f.input :titleUa
+	= f.input :content
+	= f.input :contentEn
+	= f.input :contentFr
+	= f.input :contentCn
+	= f.input :contentEs
+	= f.input :contentUa
+	= f.button :submit, "Сохранить новую версию", class: "btn btn-default"

@@ -12,7 +12,7 @@
 			%ul.nav.navbar-nav.navbar-right
 				.btn-group
 				%li= link_to "Создать запись", new_article_path
-				%li= link_to "Выйти", new_article_path
+				%li= link_to('Выйти', destroy_user_session_path, :method => :delete)
 	%p.notice= notice
 	%p.alert= alert
 

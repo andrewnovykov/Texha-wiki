@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  articles_id: 1
+  t.string: 
+  t.string: 
+  t.string: 
+  t.string: 
+  t.string: 
+  t.string: 
+  t.text: 
+  t.text: 
+  t.text: 
+  t.text: 
+  t.text: 
+  t.text: 
+
+two:
+  user_id: 1
+  articles_id: 1
+  t.string: 
+  t.string: 
+  t.string: 
+  t.string: 
+  t.string: 
+  t.string: 
+  t.text: 
+  t.text: 
+  t.text: 
+  t.text: 
+  t.text: 
+  t.text: 

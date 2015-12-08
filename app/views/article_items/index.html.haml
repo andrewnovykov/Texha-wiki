@@ -1,0 +1,13 @@
+- @items.each do | item |
+	%h2= link_to item.title, item
+	%p= truncate(item.content, length: 200)
+	%p
+		Опубликовано: 
+		= item.created_at
+		Пользователем:
+		= item.user_id
+		%br
+		Обновлено:
+		= item.updated_at
+		Пользователем:
+		= item.user_id

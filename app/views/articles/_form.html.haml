@@ -1,17 +1,5 @@
 = simple_form_for @article do |f|
-	= f.collection_select :category_id, Category.all, :id, :name, {promt: "Выберите категорию"}
-	%br
-	= f.input :title, label: 'Название записи' , placeholder: 'название на русском'
-	= f.input :titleEn, label: 'Название записи EN' , placeholder: 'название на английском'
-	= f.input :titleFr
-	= f.input :titleCn
-	= f.input :titleEs
-	= f.input :titleUa
-	%br
+	= f.collection_select :category_id, Category.all, :id, :name, { promt: "Choose a Category" }
+	= f.input :title
 	= f.input :content
-	= f.input :contentEn
-	= f.input :contentFr
-	= f.input :contentCn
-	= f.input :contentEs
-	= f.input :contentUa
-	= f.button :submit, "Сохранить", class: "btn btn-default"
+	= f.submit

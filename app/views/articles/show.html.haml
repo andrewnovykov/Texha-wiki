@@ -1,25 +1,68 @@
 = link_to "Назад", root_path, type: "button", class: "btn btn-default"
 
-%h1= @article.title
-%p= @article.content
+%br
+%br
+%br
+	%ul.nav.nav-tabs{:role => "tablist"}
+		%li.active{:role => "presentation"}
+			%a{"aria-controls" => "Ru", "data-toggle" => "tab", :href => "#Ru", :role => "tab"} Ru
+		%li{:role => "presentation"}
+			%a{"aria-controls" => "En", "data-toggle" => "tab", :href => "#En", :role => "tab"} En
+		%li{:role => "presentation"}
+			%a{"aria-controls" => "Fr", "data-toggle" => "tab", :href => "#Fr", :role => "tab"} Fr
+		%li{:role => "presentation"}
+			%a{"aria-controls" => "Cn", "data-toggle" => "tab", :href => "#Cn", :role => "tab"} Cn
+		%li{:role => "presentation"}
+			%a{"aria-controls" => "Es", "data-toggle" => "tab", :href => "#Es", :role => "tab"} Es
+		%li{:role => "presentation"}
+			%a{"aria-controls" => "Ua", "data-toggle" => "tab", :href => "#Ua", :role => "tab"} Ua
 
-%h1= @article.titleEn
-%p= @article.contentEn
+	.tab-content
+		#Ru.tab-pane.active{:role => "tabpanel"}
+			%h2= @article.title
+			%p= @article.content
+		#En.tab-pane{:role => "tabpanel"} 
+			%h2= @article.titleEn
+			%p= @article.contentEn
 
-%h1= @article.titleFr
-%p= @article.contentFr
+		#Fr.tab-pane{:role => "tabpanel"} 
+			%h2= @article.titleFr
+			%p= @article.contentFr
 
-%h1= @article.titleCn
-%p= @article.contentCn
+		#Cn.tab-pane{:role => "tabpanel"} 
+			%h2= @article.titleCn
+			%p= @article.contentCn
 
-%h1= @article.titleEs
-%p= @article.contentEs
+		#Es.tab-pane{:role => "tabpanel"} 
+			%h2= @article.titleEs
+			%p= @article.contentEs
 
-%h1= @article.titleUa
-%p= @article.contentUa
+		#Ua.tab-pane{:role => "tabpanel"}
+			%h2= @article.titleUa
+			%p= @article.contentUa 
+
 
 .btn-group
 	
 	= link_to "Редактировать", edit_article_path(@article), class: "btn btn-default"
 	= if current_user.admin?
 		= link_to "Удалить", article_path(@article), method: :delete,  data: { confirm: "Вы уверены?"}, class: "btn btn-default"
+
+%br
+%br
+%br
+	%h4 Старые версии:
+	- @items.each do | item |
+		%h2= link_to item.title, item
+		%p
+			Опубликовано: 
+			= item.created_at
+			Пользователем:
+			= item.user_id
+			%br
+			
+
+
+
+
+
